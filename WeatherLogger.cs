@@ -8,7 +8,6 @@ class WeatherLogger
 {
     private static readonly string dataFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "Exam_Unit_4", "weather_data.json");
 
-    // Structure to store both user and YR weather data together.
     public class WeatherEntry
     {
         public WeatherData userWeatherData { get; set; }
@@ -20,7 +19,7 @@ class WeatherLogger
         var weatherLog = LoadData();
         weatherLog.Add(new WeatherEntry { userWeatherData = userWeatherData, yrWeatherData = yrWeatherData });
 
-        EnsureDirectoryExists(dataFilePath); // Ensure directory exists before writing
+        EnsureDirectoryExists(dataFilePath); 
         File.WriteAllText(dataFilePath, JsonSerializer.Serialize(weatherLog));
     }
 

@@ -5,7 +5,7 @@ using System.Text.Json;
 
 class YRService
 {
-    private static readonly string YR_API_URL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60&lon=11"; // Adjust latitude and longitude as needed
+    private static readonly string YR_API_URL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60&lon=11";
     private static readonly int RETRY_ATTEMPTS = 3;
 
     public static async Task<WeatherData> GetYRWeather()
